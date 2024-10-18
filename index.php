@@ -8,7 +8,6 @@ $errors = [];
 
 function check_captcha($token)
 {
-	var_dump($token);
 	$ch = curl_init("https://smartcaptcha.yandexcloud.net/validate");
 	$args = [
 		"secret" => SMARTCAPTCHA_SERVER_KEY,
@@ -34,7 +33,6 @@ function check_captcha($token)
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	print_r($_POST);
 
 	$login = $_POST['login'] ?? '';
 	$password = $_POST['password'] ?? '';
